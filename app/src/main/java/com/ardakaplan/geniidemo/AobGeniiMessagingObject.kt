@@ -17,7 +17,7 @@ class AobGeniiMessagingObject(
     val uuid: String,
     val company: Company,
     val environmentType: EnvironmentType,
-    val type: Type,
+    var type: Type,
     val trigger: Trigger
 ) : Serializable {
 
@@ -26,6 +26,7 @@ class AobGeniiMessagingObject(
         HANDSHAKE,
         STAND_UP,  //ayağa kaldırma
         OPEN_WITHOUT_ORDER,  //siparişsiz açma
+        GENII_TO_AOB_TEST
     }
 
     enum class Trigger {

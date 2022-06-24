@@ -15,5 +15,6 @@ class Constants {
         const val GENII_DEMO_PACKAGE_NAME = "com.ardakaplan.geniidemo"
 
         const val GENII_BROADCAST_LISTENER = "com.ardakaplan.geniidemo.aobListener"
+        const val AOB_BROADCAST_LISTENER = "com.ardakaplan.aob_demo.geniiListener"
     }
 }

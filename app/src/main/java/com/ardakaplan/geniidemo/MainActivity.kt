@@ -2,7 +2,10 @@ package com.ardakaplan.geniidemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.ardakaplan.geniidemo.aobobjects.Company
+import com.ardakaplan.geniidemo.aobobjects.EnvironmentType
 import com.ardakaplan.geniidemo.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +24,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.mainActivityButtonSendData.setOnClickListener {
 
+            GeniiBroadcastReceiver.sendBroadcast(
+                this,
+                AobGeniiMessagingObject(
+                    Random().nextInt(10000),
+                    "150108",
+                    "11112223",
+                    Company.AYEDAS,
+                    EnvironmentType.DIR,
+                    AobGeniiMessagingObject.Type.GENII_TO_AOB_TEST,
+                    AobGeniiMessagingObject.Trigger.GENII
+                )
+            )
         }
     }
 
