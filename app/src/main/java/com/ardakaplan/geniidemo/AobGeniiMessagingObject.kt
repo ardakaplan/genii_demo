@@ -22,15 +22,18 @@ class AobGeniiMessagingObject(
 ) : Serializable {
 
 
-    enum class Type {
-        HANDSHAKE,
-        STAND_UP,  //ayağa kaldırma
-        OPEN_WITHOUT_ORDER,  //siparişsiz açma
-        GENII_TO_AOB_TEST
+    enum class Type(id: Int) {
+        HANDSHAKE(0),
+        STAND_UP(1),  //ayağa kaldırma
+        OPEN_WITHOUT_ORDER(2),  //siparişsiz açma
+        GENII_TO_AOB_TEST(3),
     }
 
-    enum class Trigger {
-        AOB, GENII
+    enum class Trigger(
+        name: String
+    ) {
+        AOB("AOB"),
+        GENII("GENII")
     }
 
     override fun toString(): String {
