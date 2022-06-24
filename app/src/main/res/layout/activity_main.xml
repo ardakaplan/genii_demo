@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F4E235"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="GENII DEMO"
+        android:textSize="100sp" />
+
+    <Button
+        android:id="@+id/mainActivity_button_sendData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND DATA"
+        android:textSize="45sp" />
+
+</LinearLayout>
