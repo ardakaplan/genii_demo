@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ardakaplan.geniidemo.aobobjects.Company
 import com.ardakaplan.geniidemo.aobobjects.EnvironmentType
 import com.ardakaplan.geniidemo.databinding.ActivityMainBinding
+import com.google.gson.Gson
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        LahanaLogger.logGenii("GENII DEMO onCreate")
+
+        intent.extras?.containsKey(Constants.BROADCAST_DATA_KEY)?.let {
+
+            val aobGeniiMessagingObject = Gson().fromJson(intent!!.extras!!.getString(Constants.BROADCAST_DATA_KEY), AobGeniiMessagingObject::class.java)
+
+            LahanaLogger.logGenii("GENII DEMO onCreate gelen data " + aobGeniiMessagingObject)
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
